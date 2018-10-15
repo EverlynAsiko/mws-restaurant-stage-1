@@ -180,6 +180,7 @@ createRestaurantHTML = (restaurant) => {
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
+  more.setAttribute('aria-label',`View details about ${restaurant.name} restaurant`);
   more.href = DBHelper.urlForRestaurant(restaurant);
   more.tabIndex='3';
   li.append(more)
@@ -213,11 +214,5 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
-if('serviceWorker' in navigator) {
-  navigator.serviceWorker
-  .register('/sw.js')
-  .catch(function(err){
-    console.log(err);
-  });
-}
+
 
