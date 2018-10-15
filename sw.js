@@ -32,3 +32,39 @@ self.addEventListener('activate', function(event){
 		}));
 	}));
 });
+
+self.addEventListener('fetch',function(event) {
+	const requestUrl = new URL(event.request.url);
+
+	if(requestUrl.origin === location.origin) {
+		if(requestUrl.pathname.startsWith('/restaurant.html')) {
+			event.respondWith(cache.match('/restaurant.html'));
+			return;
+		}
+
+		if(requestUrl.pathname.startsWith('/img')) {
+			event.respondWith(serveImage(event.request));
+			return;
+		}
+	}
+
+
+	event.respondWith(caches.match(event.request).then(function(response) {
+		return response || fetch(event.request);
+	}));
+});
+
+function serveImage(request) {
+	let imageStorageUrl = request.url;
+
+	imageStorageUrl = imageStorageUrl.replace(/-small\.\w{3}|-medium\.\w{3}|-large\.\w{3}/i, '');
+
+	return caches.open(contentImgsCache).then(function(cache) {
+		return cache.match(imageStorageUrl).then(function(response) {
+			return response || fetch(request).then(function(networkResponse) {
+				cache.put(imageStorageUrl, networkResponse.clone());
+				return networkResponse;
+			});
+		});
+	});
+}
