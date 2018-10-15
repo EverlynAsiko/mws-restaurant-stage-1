@@ -152,6 +152,8 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
   addMarkersToMap();
 }
 
+"use strict";
+
 /**
  * Create restaurant HTML.
  */
@@ -159,6 +161,7 @@ createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
 
   const image = document.createElement('img');
+  image.alt = `${restaurant.name} restaurant picture`;
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
