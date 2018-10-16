@@ -1,5 +1,6 @@
 "use strict";
 
+//Added variables and functions for static assets
 const appName = "restaurant_review";
 const staticCacheName = appName + "_v1.0";
 
@@ -22,6 +23,7 @@ self.addEventListener('install', function(event){
 	}));
 });
 
+//Added event listeners for when the service worker activates and fetches
 self.addEventListener('activate', function(event){
 	event.waitUntil(caches.keys().then(function(cacheNames) {
 		return Promise.all(cacheNames.filter(function(cacheName) {
@@ -53,6 +55,7 @@ self.addEventListener('fetch',function(event) {
 	}));
 });
 
+//This is to cache the images
 function serveImage(request) {
 	let imageStorageUrl = request.url;
 

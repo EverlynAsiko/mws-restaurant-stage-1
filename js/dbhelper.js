@@ -176,6 +176,8 @@ class DBHelper {
     );
     return marker;
   } */
+
+  //Added mapOffline method for when there is no network
   static mapOffline() {
     const map = document.getElementById('map');
     map.className = "map-offline";
