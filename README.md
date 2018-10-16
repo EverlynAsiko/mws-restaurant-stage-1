@@ -16,10 +16,10 @@ In a terminal, check the version of Python you have: `python -V`. If you have Py
 3. Explore the provided code.
 
 ### Credits
-The awesome Udacity team for the starter code
-Alexandro Perez - https://alexandroperez.github.io/mws-walkthrough/
-Matthew Cranford - https://matthewcranford.com/restaurant-reviews-app-walkthrough-part-1-map-api/
-Doug Brown - https://www.youtube.com/watch?v=92dtrNU1GQc
+The awesome Udacity team for the starter code  
+Alexandro Perez - https://alexandroperez.github.io/mws-walkthrough/  
+Matthew Cranford - https://matthewcranford.com/restaurant-reviews-app-walkthrough-part-1-map-api/  
+Doug Brown - https://www.youtube.com/watch?v=92dtrNU1GQc  
 
 
 
