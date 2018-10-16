@@ -176,6 +176,12 @@ class DBHelper {
     );
     return marker;
   } */
+  static mapOffline() {
+    const map = document.getElementById('map');
+    map.className = "map-offline";
+    map.innerHTML = `<div class="warning-icon">!</div><div class="warning-message">Problem loading Maps</div>
+    <div class="warning-suggestion">Are you offline? Please check back later.</div>`;
+  }
 
 }
 

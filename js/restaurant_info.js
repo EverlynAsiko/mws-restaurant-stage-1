@@ -36,7 +36,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
           DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
         } catch(error) {
           console.log("Map couldn't initialize", error);
+          DBHelper.mapOffline();
         }
+      } else {
+        DBHelper.mapOffline();
       }    
       fillBreadcrumb();      
     }

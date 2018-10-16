@@ -14,7 +14,6 @@ self.addEventListener('install', function(event){
 			'/restaurant.html',
 			'/css/styles.css',
 			'/js/dbhelper.js',
-			'/js/secret.js',
 			'/js/main.js',
 			'/js/restaurant_info.js',
 			'js/register_sw.js',

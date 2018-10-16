@@ -97,7 +97,10 @@ function initMap() {
       }).addTo(newMap);
     }catch(error) {
       console.log("Map couldn't initialize",error);
+      DBHelper.mapOffline();
     }
+  } else {
+    DBHelper.mapOffline();
   }
 
   updateRestaurants();
